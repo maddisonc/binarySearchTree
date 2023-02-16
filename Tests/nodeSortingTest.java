@@ -140,9 +140,61 @@ class nodeSortingTest {
         assertEquals(expected, actual);
     }
 
-    // test if a value exists in the tree
+    // tests for searching for a value in the tree
+    // does _ exist in the tree?
+    @Test
+    void checkForVal7InTree ()
+    {
+        // starting value: 8
+        root = tree1.insertVals(root, 8);
 
+        root = tree1.insertVals(root, 3);
+        root = tree1.insertVals(root, 10);
+        root = tree1.insertVals(root, 1);
+        root = tree1.insertVals(root, 6);
+        root = tree1.insertVals(root, 4);
+        root = tree1.insertVals(root, 7);
 
+        Boolean expected = true;
+        Boolean actual = tree1.isValInTree(root, 7);
+        assertEquals(expected, actual);
+    }
 
+    @Test
+    void checkForVal8AfterDelete ()
+    {
+        // starting value: 8
+        root = tree1.insertVals(root, 8);
 
-}
+        root = tree1.insertVals(root, 3);
+        root = tree1.insertVals(root, 10);
+        root = tree1.insertVals(root, 1);
+        root = tree1.insertVals(root, 6);
+        root = tree1.insertVals(root, 4);
+        root = tree1.insertVals(root, 7);
+
+        // deletes value 8
+        root = tree1.deleteNode(root, 8);
+
+        Boolean expected = false;
+        Boolean actual = tree1.isValInTree(root, 8);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void checkForVal100NeverExisted ()
+    {
+        // starting value: 11
+        root = tree1.insertVals(root, 11);
+
+        root = tree1.insertVals(root, 7);
+        root = tree1.insertVals(root, 12);
+        root = tree1.insertVals(root, 5);
+        root = tree1.insertVals(root, 9);
+
+        Boolean expected = false;
+        Boolean actual = tree1.isValInTree(root, 100);
+        assertEquals(expected, actual);
+    }
+
+} // end tests class
