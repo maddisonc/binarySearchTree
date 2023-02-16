@@ -51,4 +51,40 @@ class nodeSortingTest {
         String actual = tree1.printTree(root, "");
         assertEquals(expected, actual);
     }
+
+    @Test
+    void printTreeRoot8 ()
+    {
+        // starting value: 8
+        root = tree1.insertVals(root, 8);
+
+        root = tree1.insertVals(root, 3);
+        root = tree1.insertVals(root, 10);
+        root = tree1.insertVals(root, 1);
+        root = tree1.insertVals(root, 6);
+        root = tree1.insertVals(root, 4);
+        root = tree1.insertVals(root, 7);
+
+        // expected tree beginning with 8
+        String expected = ": 8 | left of previous: 3 | left of previous: 1 | right of previous: 6 | left of previous: 4 | right of previous: 7 | right of previous: 10 | ";
+        String actual = tree1.printTree(root, "");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void printTreeRoot11 ()
+    {
+        // starting value: 11
+        root = tree1.insertVals(root, 11);
+
+        root = tree1.insertVals(root, 7);
+        root = tree1.insertVals(root, 12);
+        root = tree1.insertVals(root, 5);
+        root = tree1.insertVals(root, 9);
+
+        // expected tree beginning with 11
+        String expected = ": 11 | left of previous: 7 | left of previous: 5 | right of previous: 9 | right of previous: 12 | ";
+        String actual = tree1.printTree(root, "");
+        assertEquals(expected, actual);
+    }
 }
