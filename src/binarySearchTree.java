@@ -31,6 +31,22 @@ class nodeSorting
         return node;
     } // end insertion method
 
+    // method to delete a node
+    public Node deleteNode (Node node, int delVal)
+    {
+        if (node == null)
+        {
+            return null;
+        }
+
+        // if we are deleting the node that is less than the previous one, it is on the left
+        // calls itself, finds the node on the left, and deletes it
+        if (delVal < node.ogValue)
+        {
+            node.left = deleteNode(node.left, delVal);
+        }
+    } // end deleteNode method
+
     // create a new node with int value i
     public Node createNewNode (int i)
     {
@@ -41,7 +57,7 @@ class nodeSorting
         newNode.left = null;
         newNode.right = null;
         return newNode;
-    }
+    } // end createNode method
 
     // printing method
     public String printTree(Node node, String leftOrRight)
@@ -60,6 +76,6 @@ class nodeSorting
         // calls self, if right states this
         result += printTree(node.right, "right of previous");
         return result;
-    }
+    } // end printTree method
 
 } // end sorting nodes method

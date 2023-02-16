@@ -6,7 +6,8 @@ class nodeSortingTest {
     nodeSorting tree1 = new nodeSorting();
     Node root = null;
 
-    // test inserting value method (when creating a new node, will the correct value be returned?)
+    // tests for inserting/adding new nodes (values)
+    // when creating a new node, will the correct value be returned?
     @Test
     void insertVal10()
     {
@@ -31,7 +32,7 @@ class nodeSortingTest {
         assertEquals(expected, actual);
     }
 
-    // tests accuracy of tree node placement
+    // tests for the accuracy of tree node placement
     @Test
     void printTreeRoot10 ()
     {
@@ -87,4 +88,6 @@ class nodeSortingTest {
         String actual = tree1.printTree(root, "");
         assertEquals(expected, actual);
     }
+
+    // tests for deleting a node
 }
