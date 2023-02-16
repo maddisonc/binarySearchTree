@@ -139,4 +139,10 @@ class nodeSortingTest {
         String actual = tree1.printTree(root, "");
         assertEquals(expected, actual);
     }
+
+    // test if a value exists in the tree
+
+
+
+
 }

@@ -115,6 +115,39 @@ class nodeSorting
         return newNode;
     } // end createNode method
 
+    // check if a value exists in the tree
+    public boolean isValInTree (Node node, int val)
+    {
+        if (node == null)
+        {
+            return false;
+        }
+
+        boolean inTree = false;
+
+        // while node is not empty
+        while (node != null)
+        {
+            // if the specified value is less than the current node, check the left one
+            if (val < node.ogValue)
+            {
+                node = node.left;
+            } // end less than
+            // else if the specified value is greater than the current node, check the right one
+            else if (val > node.ogValue)
+            {
+                node = node.right;
+            } // end greater
+            // then the node == the value we are searching for
+            else
+            {
+                inTree = true;
+                break;
+            } // end val is in tree
+        } // end while not empty
+        return inTree;
+    } // end method that checks if value is in the tree
+
     // printing method
     public String printTree(Node node, String leftOrRight)
     {
