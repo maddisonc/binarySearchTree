@@ -17,7 +17,21 @@ class nodeSorting
             // write method that creates a new node with value passed in
             return createNewNode(newVal);
         }
+        return node;
     } // end insertion method
+
+    // create a new node with int value i
+    public Node createNewNode (int i)
+    {
+        Node newNode = new Node ();
+        // sets value to int that is passed in
+        int ogValue = i;
+        // left and right will be null because this is the first node
+        newNode.left = null;
+        newNode.right = null;
+        return newNode;
+    }
+
 } // end sorting nodes method
 
 
