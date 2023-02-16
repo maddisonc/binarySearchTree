@@ -2,7 +2,7 @@
 // value of left node is less than the parent, right value is greater than the parent
 class Node
 {
-    int ogValue;
+    int ogValue; // parent value
     Node left;
     Node right;
 } // end node class
@@ -16,6 +16,12 @@ class nodeSorting
         {
             // write method that creates a new node with value passed in
             return createNewNode(newVal);
+        }
+
+        // if the incoming value is less than the parent, then is belongs on the left
+        if (newVal < node.ogValue)
+        {
+            node.left = insertVals(node.left, newVal);
         }
         return node;
     } // end insertion method
@@ -44,6 +50,6 @@ public class binarySearchTree
         Node root = null;
 
         // creates new root with value of 10
-        tree1.insertVals(root, 10);
+        root = tree1.insertVals(root, 10);
     } // end main
 } // end driver method
