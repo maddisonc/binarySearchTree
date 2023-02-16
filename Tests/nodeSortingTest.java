@@ -33,6 +33,7 @@ class nodeSortingTest {
     }
 
     // tests for the accuracy of tree node placement
+    // when inputting values, will the method return an accurate tree?
     @Test
     void printTreeRoot10 ()
     {
@@ -90,4 +91,52 @@ class nodeSortingTest {
     }
 
     // tests for deleting a node
+    // when a node is deleted, will the method output an accurate tree (rearrange the entire tree to delete node)?
+    @Test
+    void DelNode7 ()
+    {
+        // starting value: 11
+        root = tree1.insertVals(root, 11);
+
+        root = tree1.insertVals(root, 7);
+        root = tree1.insertVals(root, 12);
+        root = tree1.insertVals(root, 5);
+        root = tree1.insertVals(root, 9);
+
+        // deletes node with value of 7
+        root = tree1.deleteNode(root, 7);
+
+        // previous tree (with 7 intact)
+        //String expected = ": 11 | left of previous: 7 | left of previous: 5 | right of previous: 9 | right of previous: 12 | ";
+
+        // new expected tree beginning with 11, with node of 7 deleted
+        String expected = ": 11 | left of previous: 9 | left of previous: 5 | right of previous: 12 | ";
+        String actual = tree1.printTree(root, "");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void DelRootNode8 ()
+    {
+        // starting value: 8
+        root = tree1.insertVals(root, 8);
+
+        root = tree1.insertVals(root, 3);
+        root = tree1.insertVals(root, 10);
+        root = tree1.insertVals(root, 1);
+        root = tree1.insertVals(root, 6);
+        root = tree1.insertVals(root, 4);
+        root = tree1.insertVals(root, 7);
+
+        // deletes node with value of 8 (root)
+        root = tree1.deleteNode(root, 8);
+
+        // previous tree (with root 8 intact)
+        // String expected = ": 8 | left of previous: 3 | left of previous: 1 | right of previous: 6 | left of previous: 4 | right of previous: 7 | right of previous: 10 | ";
+
+        // new expected tree beginning with 10 (root 8 deleted)
+        String expected = ": 10 | left of previous: 3 | left of previous: 1 | right of previous: 6 | left of previous: 4 | right of previous: 7 | ";
+        String actual = tree1.printTree(root, "");
+        assertEquals(expected, actual);
+    }
 }
