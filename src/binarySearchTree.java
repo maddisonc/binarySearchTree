@@ -56,5 +56,10 @@ public class binarySearchTree
 
         // creates new root with value of 10
         root = tree1.insertVals(root, 10);
+
+        root = tree1.insertVals(root, 8);
+        root = tree1.insertVals(root, 4);
+        root = tree1.insertVals(root, 2);
+        root = tree1.insertVals(root, 12);
     } // end main
 } // end driver method
