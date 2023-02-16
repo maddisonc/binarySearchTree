@@ -21,7 +21,12 @@ class nodeSorting
         // if the incoming value is less than the parent, then is belongs on the left
         if (newVal < node.ogValue)
         {
-            node.left = insertVals(node.left, newVal);
+            node.left = insertVals(node.left, newVal); // recursion, calls itself to sort
+        }
+        // else if the incoming value is greater than the parent - moves the new node to the right
+        else if (newVal > node.ogValue)
+        {
+            node.right = insertVals(node.right, newVal); // recursion, calls itself to sort
         }
         return node;
     } // end insertion method
