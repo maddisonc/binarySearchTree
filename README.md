@@ -1,4 +1,4 @@
-# binarySearchTree
+Title: Binary Search Tree Implementation
 
 Resources:
 Sorting nodes algor: https://www.youtube.com/watch?v=81PpYQ0AN_w&t=3s
